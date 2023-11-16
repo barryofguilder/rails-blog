@@ -20,3 +20,6 @@ Deployed with [Render.io](https://render.com/)
 * Run `brew install vips` to install image resizer needed for action text.
 * Setting up S3:
   * Run `EDITOR="code --wait" rails credentials:edit` and add the aws access key id and secret access key.
+
+## Debugging
+* Add `<% console %>` to a view to enable a Ruby console when running the app.
