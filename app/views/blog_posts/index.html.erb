@@ -2,7 +2,15 @@
 
 <% @blog_posts.each do |blog_post| %>
   <div>
-    <h2><%= link_to blog_post.title, blog_post %></h2>
+    <h2>
+      <%= link_to blog_post.title, blog_post, class: "hover:text-gray-600" %>
+
+      <% if blog_post.draft? %>
+        <span class="px-1 py-px bg-gray-100 text-gray-900 text-xs rounded">Draft</span>
+      <% elsif blog_post.scheduled? %>
+        <span class="px-1 py-px bg-blue-100 text-blue-900 text-xs rounded">Scheduled</span>
+      <% end %>  
+    </h2>
     <p><%= blog_post.body %></p>
   </div>
 <% end %>
